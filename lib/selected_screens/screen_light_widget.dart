@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:parallax_city/constants.dart';
 
 class ScreenLightWidget extends StatefulWidget {
-  ScreenLightWidget({Key? key}) : super(key: key);
+  const ScreenLightWidget({Key? key}) : super(key: key);
 
   @override
   State<ScreenLightWidget> createState() => _ScreenLightWidgetState();
@@ -10,6 +11,7 @@ class ScreenLightWidget extends StatefulWidget {
 class _ScreenLightWidgetState extends State<ScreenLightWidget> {
   double _sliderValue = 0;
   bool _switch = true;
+
 
   @override
   Widget build(BuildContext context) {
@@ -25,29 +27,34 @@ class _ScreenLightWidgetState extends State<ScreenLightWidget> {
           children: [
             const Text('Light'),
             Slider.adaptive(
-              min: 0,
+                min: 0,
                 max: 100,
                 value: _sliderValue,
                 divisions: 100,
-                activeColor: Colors.deepOrange,
-                inactiveColor: Colors.green,
+                activeColor: kLightPurple,
+                inactiveColor: kLightPurple.withOpacity(0.3),
                 onChanged: (double value) {
-                setState(() {
-                  _sliderValue = value;
-                });
+                  setState(() {
+                    _sliderValue = value;
+                  });
                 }),
             Container(
               width: 60,
               height: 30,
               decoration: const BoxDecoration(
-                color: Colors.deepOrange,
-                borderRadius: BorderRadius.all(Radius.circular(25))
-              ),
-              child: Center(child: Text('$_sliderValue lux', style: const TextStyle(color: Colors.white),)),
+                  color: kDark,
+                  borderRadius: BorderRadius.all(Radius.circular(25))),
+              child: Center(
+                  child: Text(
+                '$_sliderValue lux',
+                style: const TextStyle(color: Colors.white),
+              )),
             ),
             Switch.adaptive(
                 value: _switch,
-                activeColor: Colors.deepOrange,
+                activeColor: kLightPurple,
+                inactiveTrackColor: kLightPurple.withOpacity(0.3),
+                inactiveThumbColor: kLightPurple.withOpacity(0.3),
                 onChanged: (bool value) {
                   setState(() {
                     _switch = value;

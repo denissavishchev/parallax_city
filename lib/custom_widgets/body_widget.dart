@@ -12,18 +12,21 @@ class BodyWidget extends StatelessWidget {
     return Column(
       children: [
         const SizedBox(
-          height: 500,
+          height: 200,
         ),
         Container(
           height: MediaQuery.of(context).size.height * 0.5,
           width: MediaQuery.of(context).size.width,
-          color: Colors.red,
+          decoration: const BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(24),),
+            color: Colors.grey,
+          ),
           alignment: Alignment.topCenter,
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: const Padding(
-            padding: EdgeInsets.only(top: 18.0),
+            padding: EdgeInsets.only(top: 8.0),
             child: Text(
-              'Night City',
+              'Main Dashboard',
               style: TextStyle(color: Colors.white),
             ),
           ),

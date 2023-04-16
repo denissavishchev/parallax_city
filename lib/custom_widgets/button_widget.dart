@@ -12,10 +12,10 @@ import 'package:parallax_city/selected_screens/screen_tv_widget.dart';
 import 'package:parallax_city/selected_screens/screen_wifi_widget.dart';
 import 'package:parallax_city/selected_screens/screen_window_widget.dart';
 
+import '../constants.dart';
+
 class ButtonWidget extends StatefulWidget {
-  ButtonWidget({
-    Key? key,
-  }) : super(key: key);
+  const ButtonWidget({Key? key,}) : super(key: key);
 
   @override
   State<ButtonWidget> createState() => _ButtonWidgetState();
@@ -39,11 +39,11 @@ class _ButtonWidgetState extends State<ButtonWidget> {
 
   int selected = 0;
 
-  Widget selectedWidget = ScreenLightWidget();
+  Widget selectedWidget = const ScreenLightWidget();
 
   void selectedScreen() {
     if (selected == 0) {
-      selectedWidget = ScreenLightWidget();
+      selectedWidget = const ScreenLightWidget();
     }else if (selected == 1) {
       selectedWidget = const ScreenBathWidget();
     }else if (selected == 2) {
@@ -75,12 +75,12 @@ class _ButtonWidgetState extends State<ButtonWidget> {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      color: const Color(0xff312f4a),
+      color: kDarkPurple,
       alignment: Alignment.topCenter,
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(24, 24, 24, 12),
+            padding: const EdgeInsets.fromLTRB(24, 8, 24, 0),
             child: GridView.builder(
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
@@ -118,7 +118,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                           decoration: BoxDecoration(
                               color: index == selected
                                   ? Colors.transparent
-                                  : const Color(0xff443e60),
+                                  : kLightPurple,
                               borderRadius:
                                   const BorderRadius.all(Radius.circular(30)),
                               boxShadow: [
@@ -137,7 +137,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                                 ),
                                 BoxShadow(
                                   color: index == selected
-                                      ? const Color(0xff2a3348)
+                                      ? kDark
                                       : Colors.transparent,
                                   spreadRadius: -2.0,
                                   blurRadius: 10.0,
@@ -169,7 +169,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                   bottom: selected == index ? 0 : -500,
                   child: Container(
                     width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height * 0.6,
+                    height: MediaQuery.of(context).size.height * 0.63,
                     decoration: const BoxDecoration(
                       color: Colors.red,
                       borderRadius:
