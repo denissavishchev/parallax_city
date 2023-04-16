@@ -1,4 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:parallax_city/selected_screens/screen_bath_widget.dart';
+import 'package:parallax_city/selected_screens/screen_clock_widget.dart';
+import 'package:parallax_city/selected_screens/screen_fan_widget.dart';
+import 'package:parallax_city/selected_screens/screen_gears_widget.dart';
+import 'package:parallax_city/selected_screens/screen_heat_widget.dart';
+import 'package:parallax_city/selected_screens/screen_light_widget.dart';
+import 'package:parallax_city/selected_screens/screen_lock_widget.dart';
+import 'package:parallax_city/selected_screens/screen_sound_widget.dart';
+import 'package:parallax_city/selected_screens/screen_term_widget.dart';
+import 'package:parallax_city/selected_screens/screen_tv_widget.dart';
+import 'package:parallax_city/selected_screens/screen_wifi_widget.dart';
+import 'package:parallax_city/selected_screens/screen_window_widget.dart';
 
 class ButtonWidget extends StatefulWidget {
   ButtonWidget({
@@ -27,6 +39,37 @@ class _ButtonWidgetState extends State<ButtonWidget> {
 
   int selected = 0;
 
+  Widget selectedWidget = ScreenLightWidget();
+
+  void selectedScreen() {
+    if (selected == 0) {
+      selectedWidget = ScreenLightWidget();
+    }else if (selected == 1) {
+      selectedWidget = const ScreenBathWidget();
+    }else if (selected == 2) {
+      selectedWidget = const ScreenClockWidget();
+    }else if (selected == 3) {
+      selectedWidget = const ScreenFanWidget();
+    }else if (selected == 4) {
+      selectedWidget = const ScreenGearsWidget();
+    }else if (selected == 5) {
+      selectedWidget = const ScreenHeatWidget();
+    }else if (selected == 6) {
+      selectedWidget = const ScreenLockWidget();
+    }else if (selected == 7) {
+      selectedWidget = const ScreenSoundWidget();
+    }else if (selected == 8) {
+      selectedWidget = const ScreenTermWidget();
+    }else if (selected == 9) {
+      selectedWidget = const ScreenTVWidget();
+    }else if (selected == 10) {
+      selectedWidget = const ScreenWiFiWidget();
+    }else if (selected == 11) {
+      selectedWidget = const ScreenWindowWidget();
+    }
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,6 +83,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
             padding: const EdgeInsets.fromLTRB(24, 24, 24, 12),
             child: GridView.builder(
                 shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 4, crossAxisSpacing: 10),
                 itemCount: buttons.length,
@@ -49,6 +93,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                     onTap: () => setState(
                       () {
                         selected = index;
+                        selectedScreen();
                       },
                     ),
                     child: Stack(
@@ -130,7 +175,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                       borderRadius:
                           BorderRadius.vertical(top: Radius.circular(24)),
                     ),
-                    child: Center(child: Text('${buttons[index]}')),
+                    child: selectedWidget,
                   ),
                 ),
               ),
