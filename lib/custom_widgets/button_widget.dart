@@ -107,7 +107,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                                   const BorderRadius.all(Radius.circular(31))),
                         ),
                         AnimatedContainer(
-                          duration: const Duration(milliseconds: 100),
+                          duration: const Duration(milliseconds: 300),
                           curve: Curves.bounceOut,
                           margin: index == selected
                               ? const EdgeInsets.fromLTRB(0.5, 0, 1, 1)
