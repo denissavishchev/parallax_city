@@ -75,8 +75,7 @@ class _ScreenLightWidgetState extends State<ScreenLightWidget> {
                         _timeRoomStart = newTime;
                       });
                     },
-                    style:
-                        ElevatedButton.styleFrom(backgroundColor: kDarkPurple),
+                    style: timeButtonStyle,
                     child: Text(
                       '$timeRoomStartHour:$timeRoomStartMin',
                       style: const TextStyle(color: Colors.white, fontSize: 18),
@@ -91,8 +90,7 @@ class _ScreenLightWidgetState extends State<ScreenLightWidget> {
                         _timeRoomEnd = newTime;
                       });
                     },
-                    style:
-                        ElevatedButton.styleFrom(backgroundColor: kDarkPurple),
+                    style: timeButtonStyle,
                     child: Text(
                       '$timeRoomEndHour:$timeRoomEndMin',
                       style: const TextStyle(color: Colors.white, fontSize: 18),
@@ -146,8 +144,7 @@ class _ScreenLightWidgetState extends State<ScreenLightWidget> {
                         _timeKitchenStart = newTime;
                       });
                     },
-                    style:
-                        ElevatedButton.styleFrom(backgroundColor: kDarkPurple),
+                    style: timeButtonStyle,
                     child: Text(
                       '$timeKitchenStartHour:$timeKitchenStartMin',
                       style: const TextStyle(color: Colors.white, fontSize: 18),
@@ -162,8 +159,7 @@ class _ScreenLightWidgetState extends State<ScreenLightWidget> {
                         _timeKitchenEnd = newTime;
                       });
                     },
-                    style:
-                        ElevatedButton.styleFrom(backgroundColor: kDarkPurple),
+                    style: timeButtonStyle,
                     child: Text(
                       '$timeKitchenEndHour:$timeKitchenEndMin',
                       style: const TextStyle(color: Colors.white, fontSize: 18),
@@ -217,8 +213,7 @@ class _ScreenLightWidgetState extends State<ScreenLightWidget> {
                         _timeBedStart = newTime;
                       });
                     },
-                    style:
-                        ElevatedButton.styleFrom(backgroundColor: kDarkPurple),
+                    style: timeButtonStyle,
                     child: Text(
                       '$timeBedStartHour:$timeBedStartMin',
                       style: const TextStyle(color: Colors.white, fontSize: 18),
@@ -233,8 +228,7 @@ class _ScreenLightWidgetState extends State<ScreenLightWidget> {
                         _timeBedEnd = newTime;
                       });
                     },
-                    style:
-                        ElevatedButton.styleFrom(backgroundColor: kDarkPurple),
+                    style: timeButtonStyle,
                     child: Text(
                       '$timeBedEndHour:$timeBedEndMin',
                       style: const TextStyle(color: Colors.white, fontSize: 18),
